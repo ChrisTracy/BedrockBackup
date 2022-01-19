@@ -28,8 +28,6 @@ while True:
     online = status.players_online
     onlineint = int(online)
 
-    print(online)
-
     #Check last run and write current run
     last_count = open('/app/last_count.txt', 'r').read()
     last_count = int(last_count)
@@ -67,9 +65,6 @@ while True:
                     "content": "Backup Failed! Check server logs!"
                 }
                 requests.post(webhook_url, data=Message)
-
-    else:
-        print("No Backup required")
 
     #sleep for loop
     time.sleep(interval)
